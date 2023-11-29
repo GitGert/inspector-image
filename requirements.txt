@@ -1,0 +1,4 @@
+exif
+stegano
+pip install pyzbar
+strings
