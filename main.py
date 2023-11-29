@@ -4,8 +4,6 @@ import binascii
 import re
 
 
-
-
 def main():
     parser = argparse.ArgumentParser(description='Welcome to inspectore image')
     #the flags take in the file location that they want to check
