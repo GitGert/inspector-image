@@ -1,6 +1,7 @@
 # inspector-image
 The object of this project is to learn about a new method of passive analysis called [steganography](https://www.freecodecamp.org/news/what-is-steganography-hide-data-inside-data/).
 
+You can use this code to find the loaction where the picture was taken and if there is a PGP key hidden in the binary (the PGP key would have to be formatted the exact same way that the example image is, otherwise it will not work).
 
 # how to run:
 
