@@ -5,8 +5,8 @@ import re
 
 
 def main():
+    #the flags take in the file location that will be checked
     parser = argparse.ArgumentParser(description='Welcome to inspectore image')
-    #the flags take in the file location that they want to check
     parser.add_argument("-map", dest="picture_location", help="location found in the image metadata")
     parser.add_argument("-steg", dest="PGP_key", help="prints out the public PGP key of current image")
 
@@ -22,6 +22,7 @@ def main():
 
 
 def printImageLocation(fileLocation):
+    #this function will try to read the file`s location from the metadata and then print it
     try:
         with open(fileLocation, 'rb') as image_file:
             my_image = Image(image_file)
@@ -38,8 +39,7 @@ def printImageLocation(fileLocation):
 
 def print_PGP_key(file_path):
     #this fuction takes in the file path and reads the file, then it convert it from binary into ascii
-    #then I call the extract pgp function to get the correct string and then I just format and print it
-    #This type of 
+    #then it calls the extract_pgp function extract the the key.Then it gets foramted and printed
     with open(file_path, 'rb') as file:
         content = file.read()
         hex_strings = binascii.hexlify(content).decode('utf-8')
@@ -50,7 +50,6 @@ def print_PGP_key(file_path):
         # Convert hex bytes to ASCII characters
         ascii_strings = ''.join([chr(int(chunk, 16)) for chunk in byte_chunks if 32 <= int(chunk, 16) <= 126])
 
-        # print(ascii_strings)
     key = extract_pgp_key(ascii_strings)
     temp = "\n".join(key.split())
 
