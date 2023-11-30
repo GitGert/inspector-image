@@ -14,7 +14,7 @@ pip install -r requirements.txt
 then run the project with either -steg or -map flags followed by the image path
 example:
 ```bash
-python3 main.py --steg images/image.jpeg
+python3 main.py -steg images/image.jpeg
 ```
 
 audit questions can be found [here](https://github.com/01-edu/public/tree/master/subjects/cybersecurity/inspector-image/audit)
